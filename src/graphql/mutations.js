@@ -1,45 +1,393 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
+export const createAlbum = /* GraphQL */ `
+  mutation CreateAlbum(
+    $input: CreateAlbumInput!
+    $condition: ModelAlbumConditionInput
   ) {
-    createTodo(input: $input, condition: $condition) {
+    createAlbum(input: $input, condition: $condition) {
       id
+      owner
+      ownerId
       name
-      description
       createdAt
       updatedAt
+      photos {
+        items {
+          id
+          createdAt
+          updatedAt
+          album {
+            id
+            owner
+            ownerId
+            name
+            createdAt
+            updatedAt
+            photos {
+              nextToken
+            }
+          }
+          fullsize {
+            region
+            bucket
+            key
+          }
+          thumbnail {
+            region
+            bucket
+            key
+          }
+          contentType
+          gps {
+            latitude
+            longitude
+            altitude
+          }
+          height
+          width
+          size
+          owner
+        }
+        nextToken
+      }
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
+export const updateAlbum = /* GraphQL */ `
+  mutation UpdateAlbum(
+    $input: UpdateAlbumInput!
+    $condition: ModelAlbumConditionInput
   ) {
-    updateTodo(input: $input, condition: $condition) {
+    updateAlbum(input: $input, condition: $condition) {
       id
+      owner
+      ownerId
       name
-      description
       createdAt
       updatedAt
+      photos {
+        items {
+          id
+          createdAt
+          updatedAt
+          album {
+            id
+            owner
+            ownerId
+            name
+            createdAt
+            updatedAt
+            photos {
+              nextToken
+            }
+          }
+          fullsize {
+            region
+            bucket
+            key
+          }
+          thumbnail {
+            region
+            bucket
+            key
+          }
+          contentType
+          gps {
+            latitude
+            longitude
+            altitude
+          }
+          height
+          width
+          size
+          owner
+        }
+        nextToken
+      }
     }
   }
 `;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
+export const deleteAlbum = /* GraphQL */ `
+  mutation DeleteAlbum(
+    $input: DeleteAlbumInput!
+    $condition: ModelAlbumConditionInput
   ) {
-    deleteTodo(input: $input, condition: $condition) {
+    deleteAlbum(input: $input, condition: $condition) {
       id
+      owner
+      ownerId
       name
-      description
       createdAt
       updatedAt
+      photos {
+        items {
+          id
+          createdAt
+          updatedAt
+          album {
+            id
+            owner
+            ownerId
+            name
+            createdAt
+            updatedAt
+            photos {
+              nextToken
+            }
+          }
+          fullsize {
+            region
+            bucket
+            key
+          }
+          thumbnail {
+            region
+            bucket
+            key
+          }
+          contentType
+          gps {
+            latitude
+            longitude
+            altitude
+          }
+          height
+          width
+          size
+          owner
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const createPhoto = /* GraphQL */ `
+  mutation CreatePhoto(
+    $input: CreatePhotoInput!
+    $condition: ModelPhotoConditionInput
+  ) {
+    createPhoto(input: $input, condition: $condition) {
+      id
+      createdAt
+      updatedAt
+      album {
+        id
+        owner
+        ownerId
+        name
+        createdAt
+        updatedAt
+        photos {
+          items {
+            id
+            createdAt
+            updatedAt
+            album {
+              id
+              owner
+              ownerId
+              name
+              createdAt
+              updatedAt
+            }
+            fullsize {
+              region
+              bucket
+              key
+            }
+            thumbnail {
+              region
+              bucket
+              key
+            }
+            contentType
+            gps {
+              latitude
+              longitude
+              altitude
+            }
+            height
+            width
+            size
+            owner
+          }
+          nextToken
+        }
+      }
+      fullsize {
+        region
+        bucket
+        key
+      }
+      thumbnail {
+        region
+        bucket
+        key
+      }
+      contentType
+      gps {
+        latitude
+        longitude
+        altitude
+      }
+      height
+      width
+      size
+      owner
+    }
+  }
+`;
+export const deletePhoto = /* GraphQL */ `
+  mutation DeletePhoto(
+    $input: DeletePhotoInput!
+    $condition: ModelPhotoConditionInput
+  ) {
+    deletePhoto(input: $input, condition: $condition) {
+      id
+      createdAt
+      updatedAt
+      album {
+        id
+        owner
+        ownerId
+        name
+        createdAt
+        updatedAt
+        photos {
+          items {
+            id
+            createdAt
+            updatedAt
+            album {
+              id
+              owner
+              ownerId
+              name
+              createdAt
+              updatedAt
+            }
+            fullsize {
+              region
+              bucket
+              key
+            }
+            thumbnail {
+              region
+              bucket
+              key
+            }
+            contentType
+            gps {
+              latitude
+              longitude
+              altitude
+            }
+            height
+            width
+            size
+            owner
+          }
+          nextToken
+        }
+      }
+      fullsize {
+        region
+        bucket
+        key
+      }
+      thumbnail {
+        region
+        bucket
+        key
+      }
+      contentType
+      gps {
+        latitude
+        longitude
+        altitude
+      }
+      height
+      width
+      size
+      owner
+    }
+  }
+`;
+export const updatePhoto = /* GraphQL */ `
+  mutation UpdatePhoto(
+    $input: UpdatePhotoInput!
+    $condition: ModelPhotoConditionInput
+  ) {
+    updatePhoto(input: $input, condition: $condition) {
+      id
+      createdAt
+      updatedAt
+      album {
+        id
+        owner
+        ownerId
+        name
+        createdAt
+        updatedAt
+        photos {
+          items {
+            id
+            createdAt
+            updatedAt
+            album {
+              id
+              owner
+              ownerId
+              name
+              createdAt
+              updatedAt
+            }
+            fullsize {
+              region
+              bucket
+              key
+            }
+            thumbnail {
+              region
+              bucket
+              key
+            }
+            contentType
+            gps {
+              latitude
+              longitude
+              altitude
+            }
+            height
+            width
+            size
+            owner
+          }
+          nextToken
+        }
+      }
+      fullsize {
+        region
+        bucket
+        key
+      }
+      thumbnail {
+        region
+        bucket
+        key
+      }
+      contentType
+      gps {
+        latitude
+        longitude
+        altitude
+      }
+      height
+      width
+      size
+      owner
     }
   }
 `;

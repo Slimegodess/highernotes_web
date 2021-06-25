@@ -10,6 +10,21 @@
       "StackName": "amplify-highernotes-dev-183144",
       "StackId": "arn:aws:cloudformation:eu-west-1:190444186521:stack/amplify-highernotes-dev-183144/846f4640-cad2-11eb-94c3-06a007265bef",
       "AmplifyAppId": "d22py6llf1g0uk"
+    },
+    "categories": {
+      "auth": {
+        "cognito74c73584": {}
+      },
+      "function": {
+        "xxx": {
+          "deploymentBucketName": "amplify-highernotes-dev-183144-deployment",
+          "s3Key": "amplify-builds/xxx-4f6265474e317a5a3471-build.zip"
+        },
+        "highernotesPhotoProcessor": {
+          "deploymentBucketName": "amplify-highernotes-dev-183144-deployment",
+          "s3Key": "amplify-builds/highernotesPhotoProcessor-6b374a693466552b5444-build.zip"
+        }
+      }
     }
   }
 }

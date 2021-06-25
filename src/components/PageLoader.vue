@@ -1,28 +1,46 @@
 <template>
-  <transition>
-    <div class="preloader">
-      <div class="logo"></div>
-      //do something
-      //if loaded play video
-    </div>
-    <p> LOADING SCREEN</p>
-  </transition>
+  <div class="fadeMe" v-if="!isloaded">
+      <h1>PAGELOADER</h1>
+  </div>
+
 </template>
 
 <script>
-export default {
+// import loading from 'vue-full-loading';
 
+export default {
+  data: () => ({
+    isloaded: true,
+  }),
+  mounted() {
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        this.isloaded = true;
+      }
+    };
+  },
 };
 </script>
 
 <style >
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  position: absolute
-  width: 100%
-  heigth: 100%
-  background-color: black
-  z-index: 9999
+.pageloader {
+  position: fixed;
+  top: 50vh;
+  left: 50vh;
+  width: 100%;
+  heigth: 100%;
+  background-color: green;
+  z-index: 10
+}
+div.fadeMe {
+  opacity:    0.5;
+  background: #000;
+  width:      100%;
+  height:     100%;
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
 </style>
