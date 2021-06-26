@@ -8,8 +8,11 @@ import { Plugin } from 'vue-responsive-video-background-player';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+
 // eslint-disable-next-line camelcase,import/extensions
 import aws_exports from './aws-exports.js';
+
+import './assets/tailwind.css';
 
 Amplify.configure(aws_exports);
 applyPolyfills().then(() => {
