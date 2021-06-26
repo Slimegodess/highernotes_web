@@ -1,17 +1,21 @@
 <template>
-  <page-loader/>
   <div class="home">
+    <div>
+      <page-loader/>
+    </div>
     <div class="video-wrapper">
       <video-background
         :src= "require('@/assets/videos/bg_video.mp4')"
-        :poster="require('@/assets/images/preloader_poster.jpg')"
+        :poster="require('@/assets/images/black-noise_med.png')"
         style="max-height: 100%; height: 100vh"
       >
         <MenuBar class="menu-container"/>
         <div class="center">
           <div class="logoBig">HIGHER NOTES LOGO!</div>
           <h1>...</h1>
-          <Login class="login" :v-if="!user"/>
+          <div class="font-semibold text-black-500" :v-if="user">Welcome</div>
+          <h1>...</h1>
+          <Login class="loginPanel" :v-if="!user"/>
         </div>
         <Footer/>
       </video-background>
@@ -44,7 +48,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 div.home {
   width:      100%;
   height:     100%;

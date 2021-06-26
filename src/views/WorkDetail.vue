@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header/>
-    <h3 class="text-4xl font-semibold">Album {{ albumName }}</h3>
+    <Header class="justify-content: top width: 100%"
+            :small_text="'check this'" :big_text_above="'HIGHER'" :big_text_below="'GALLERY'"/>
     <div class="flex w-full mt-10 items-center justify-center bg-grey-lighter">
       <form enctype="multipart/form-data" novalidate>
         <label
@@ -26,7 +26,13 @@
         </label>
       </form>
     </div>
-    <div class="text-2xl mt-4">Gallery</div>
+    <div class="flex mt-16 justify-center
+      text-white font-semibold">
+      <div class="justify-center text-3xl m-4 line-through">
+        Gallery Album</div>
+      <div class="justify-center text-3xl m-4">
+        {{ albumName }}</div>
+    </div>
     <div class="flex flex-wrap p-10 justify-center m-auto w-full" v-if="photos">
       <div class="shadow-xl ml-4 mt-4 w-4/12" v-for="(photo, idx) in photos" :key="idx">
         <div >
@@ -101,6 +107,6 @@ export default {
 
 <style lang='scss' scoped>
 amplify-s3-image {
-  --width: 50%;
+  --width: 90%;
 }
 </style>

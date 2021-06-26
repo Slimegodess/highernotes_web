@@ -1,17 +1,23 @@
 <template>
-  <Header :small_text="'you dare'" :big_text_above="'HIGHER'" :big_text_below="'ABOUT PAGE'" />
-  <div class="content_information">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
-      , sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
-      , sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
-      , sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua.</p>
+  <div>
+    <Header class="justify-content: top width: 100%"
+            :small_text="'you dare'" :big_text_above="'HIGHER'" :big_text_below="'ABOUT US'" />
+    <div class="flex text-white text-base mt-8 m-12">
+      <p class="m-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        , sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua.</p>
+      <p class="m-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        , sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua.</p>
+      <p class="m-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        , sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua.</p>
+    </div>
+    <Footer/>
   </div>
-  <Footer/>
 </template>
 
 <script>

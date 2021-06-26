@@ -8,7 +8,10 @@ import awsconfig from '@/aws-exports';
 // eslint-disable-next-line import/prefer-default-export
 export const albumInfo = {
   namespaced: true,
-  state: { albums: null },
+  state: {
+    albums: null,
+    photo: null,
+  },
   mutations: {
     setAlbums(state, payload) {
       state.albums = payload;
@@ -69,5 +72,6 @@ export const albumInfo = {
   },
   getters: {
     albums: (state) => state.albums,
+    photo: (state) => state.photo,
   },
 };

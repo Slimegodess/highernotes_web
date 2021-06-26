@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div class="bg-hero py-40 bg-cover bg-no-repeat bg-center flex justify-center"/>
+  <div>
     <router-view/>
   </div>
 </template>
@@ -25,5 +26,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.bg-hero {
+  background-image: url("~@/assets/images/black-noise_soft.png");
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
 </style>

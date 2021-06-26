@@ -1,59 +1,35 @@
 <template>
-  <nav class="navbar" v-bind:class="[isSticky ? stickyClass : '']">
-    <div>
-      <li class="mr-6" v-if="user">
+  <nav class="navbar box-content h-32 w-32 p-6
+  flex flex-direction: row max-height: 32px"
+       v-bind:class="[isSticky ? stickyClass : '']">
+    <div class="flex-star mr-16 width: 30px">
+      <NavDropMenu class=""/>
+    </div>
+    <div class="justify-content: space-between align-self: stretch ml-100 width: 100%"/>
+    <div class="flex-end width: 20px height: 100%">
+      <a v-if="user">
         <router-link to="/">
           <div class="logoSmall">HOMELOGO</div>
         </router-link>
-      </li>
+      </a>
     </div>
   </nav>
-
-  <div>
-    <ul class="menu">
-      <li class="mr-6" v-if="!user">
-        <router-link to="/">
-          <a class="text-blue-500 hover:text-blue-800 cursor-pointer">Login</a>
-        </router-link>
-      </li>
-      <li class="mr-6" v-if="!user">
-        <router-link to="/signup">
-          <a class="text-blue-500 hover:text-blue-800 cursor-pointer">Sign Up</a>
-        </router-link>
-      </li>
-      <li class="mr-6" v-if="user">
-        <div class="font-semibold text-black-500">Welcome {{ user.username }}</div>
-      </li>
-      <li class="mr-6" v-if="user">
-        <router-link to="/works">
-          <div class="text-blue-500 hover:text-blue-800 cursor-pointer">Works</div>
-        </router-link>
-        <router-link to="/About">
-          <div class="text-blue-500 hover:text-blue-800 cursor-pointer">About</div>
-        </router-link>
-        <router-link to="/Contact">
-          <a class="text-blue-500 hover:text-blue-800 cursor-pointer">Contact</a>
-        </router-link>
-      </li>
-      <li class="mr-6" v-if="user">
-        <a class="text-blue-500 hover:text-blue-800 cursor-pointer" @click="logout">Logout</a>
-      </li>
-    </ul>
-  </div>
 </template>
 
 <script>
+import NavDropMenu from '@/components/NavDropMenu.vue';
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'MenuBar',
   components: {
+    NavDropMenu,
   },
   data() {
     return {
       isSticky: false,
       stickyClass: 'is_sticky',
-      scrollPosition: 0,
+      // scrollPosition: 0,
     };
   },
   created() {
@@ -63,13 +39,9 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
-    async logout() {
-      await this.$store.dispatch('auth/logout');
-      this.$router.push('/');
-    },
     handleScroll() {
       this.scrollPosition = window.scrollY;
-      if (this.scrollPosition >= 100) {
+      if (this.scrollPosition >= 0.00000001) {
         this.isSticky = true;
       } else {
         this.isSticky = false;
@@ -81,18 +53,13 @@ export default {
       user: 'auth/user',
     }),
   },
+  mounted() {
+    this.handleScroll();
+  },
 };
 </script>
 
 <style>
-.menu {
-  display: table;
-  position: absolute;
-  top: 0;
-  table-layout: fixed;
-  border-spacing: 40px;
-  list-style-type: none
-}
 a:hover {
   text-decoration-color: currentcolor;
   text-decoration: none;
@@ -100,7 +67,17 @@ a:hover {
 a:visited {
   color: green;
 }
-.logoSmall {
-  text-align: right;
+.navbar.is_sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  -webkit-animation: .95s ease-in-out 0s normal none 1 running fadeInDown;
+  animation: .95s ease-in-out 0s normal none 1 running fadeInDown;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
 }
 </style>

@@ -1,47 +1,43 @@
 <template>
-  <Header :small_text="'lets go'" :big_text_above="'HIGHER'" :big_text_below="'WORKS'" />
-  <!-- <div class="grid">
-    <div class="grid-item">
-      <a class="project"></a>
-       router?
-      name file gallery
-      add component Works
-      add component work
-    </div>
-  </div>
-  -->
-  <div class="works">
-    <h3 class="text-3xl">Create Or Choose An Album</h3>
-    <div class="flex flex-col m-auto w-64">
-      <input
-        class="my-4 bg-gray-200 appearance-none border-2 border-gray-200
-        rounded w-full py-2 px-4 text-gray-700 leading-tight
-        focus:outline-none focus:bg-white focus:border-purple-500"
-        placeholder="Album Name..."
-        type="text"
-        v-model="albumName"
-      />
-      <button class="btn-blue mb-4" @click="createAlbum()">Create Album</button>
-    </div>
-    <div class="text-red-500">{{ error }}</div>
-    <hr />
-    <h5 class="mt-4 text-2xl">List Of Albums</h5>
-    <div class="flex flex-wrap w-full m-auto justify-center">
-      <div
-        v-for="(album, idx) in albums"
-        :key="idx"
-        class="cursor-pointer mt-4 ml-4 w-3/12 h-24 shadow-xl flex items-center justify-center"
-        @click="openAlbumDetail(album)"
-      >
-        <div class="text-2xl">{{ album.name }}</div>
+  <div>
+    <Header class="justify-content: top width: 100%"
+            :small_text="'lets go'" :big_text_above="'HIGHER'" :big_text_below="'WORKS'"/>
+    <div class="flex">
+      <h3 class="m-auto text-3xl text-white">Create Or Choose An Album</h3>
+      <div class="w-64">
+        <input
+          class="my-6 text-grey-700 appearance-none border-2 border-white-200
+          rounded w-full py-2 px-4 text-grey-700 leading-tight
+          focus:outline-none focus:bg-white focus:border-purple-500"
+          placeholder="Album Name..."
+          type="text"
+          v-model="albumName"
+        />
+        <button class="text-white btn-orange mb-6" @click="createAlbum()">Create Album</button>
       </div>
-    </div>
+      <div class="text-red-500">{{ error }}</div>
+      <hr />
+      <h5 class="text-white mt-4 text-2xl">List Of Albums</h5>
+      <div class="flex flex-wrap w-full m-auto justify-center">
+        <div
+          v-for="(album, idx) in albums"
+          :key="idx"
+          class="text-white cursor-pointer mt-16 ml-4 w-3/12
+           h-24 shadow-sm flex items-center justify-center"
+          @click="openAlbumDetail(album)"
+        >
+          <div class="text-white text-2xl">{{ album.name }}</div>
+        </div>
+        </div>
+      </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
 import { mapGetters } from 'vuex';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'Works',
@@ -50,6 +46,7 @@ export default {
   },
   data: () => ({ albumName: '', error: '' }),
   components: {
+    Footer,
     Header,
   },
   methods: {
