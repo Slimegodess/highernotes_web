@@ -2,13 +2,13 @@
   <MenuBar/>
   <div class="ml-16 text-white text-align: left">
     <div>
-      <span class="small_text_header text-2xl">{{small_text}}</span>
+      <a class="small_text_header text-2xl">{{small_text}}</a>
     </div>
     <div>
-      <span class="big_text_above text-9xl line-through">{{big_text_above}}</span>
+      <a class="big_text_above text-9xl line-through">{{big_text_above}}</a>
     </div>
     <div>
-      <span class="big_text_below text-5xl">{{big_text_below}}</span>
+      <a class="big_text_below text-5xl line-through">{{big_text_below}}</a>
     </div>
   </div>
 </template>

@@ -1,30 +1,20 @@
 <template>
-  <div class="footer">
+  <div class="footer text-green-600 hover:text-green">
     <div class="content_socialmedia">
       <div class="media">
-        <a href="https://www.w3schools.com" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
       </div>
       <div class="media">
-        <a href="https://www.w3schools.com" target="_blank">Youtube</a>
+        <a href="https://www.youtube.com/" target="_blank">Youtube</a>
       </div>
       <div class="media">
-        <a href="https://www.w3schools.com" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
       </div>
     </div>
     <div class="content_email">
       <a href="mailto: highhigherhai@gmail.com">highhigherhai@gmail.com</a>
     </div>
   </div>
-  <!--
-  <VueFixedHeader :threshold="0" headerClass="fixed-footer" fixedClass="isFixed">
-    <el-menu class="footer-content" style="align-items: center;">
-      <el-menu-item class=left href="https://www.w3schools.com" target="_blank">Instagram</el-menu-item> |
-      <el-menu-item class=left href="https://www.w3schools.com" target="_blank">Youtube</el-menu-item> |
-      <el-menu-item class=right href="mailto: highhigherhai@gmail.com">
-        highhigherhai@gmail.com</el-menu-item>
-    </el-menu>
-  </VueFixedHeader>
-  -->
 </template>
 
 <script>

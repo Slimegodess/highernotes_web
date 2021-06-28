@@ -1,6 +1,7 @@
 <template>
-  <div class="bg-hero py-40 bg-cover bg-no-repeat bg-center flex justify-center"/>
-    <MenuBar/>
+  <div class="overflow-false">
+    <div class="bg-hero py-40 bg-cover bg-no-repeat bg-center flex justify-center"/>
+    <MenuBar class="left-0 top-0 w-full"/>
     <form v-if="!confirmPassword" class="flex flex-col items-center" @submit.prevent="signUp">
       <div class="flex flex-col user">
         <label class="block text-white text-sm font-bold mb-2" for="userName">User Name</label>
@@ -48,6 +49,7 @@
         <button class="btn-blue" @click="confirmSignUp">Confirm Code</button>
       </div>
     </div>
+  </div>
 </template>
 
 <script>

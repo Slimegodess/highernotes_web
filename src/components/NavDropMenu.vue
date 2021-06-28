@@ -11,17 +11,17 @@
           <a class="text-green-500 hover:text-blue-800 cursor-pointer">Sign Up</a>
         </router-link>
       </li>
-      <li>
+      <li class="mr-6">
         <router-link to="/works">
           <a class="text-green-500 hover:text-blue-800 cursor-pointer">Works</a>
         </router-link>
       </li>
-      <li>
+      <li class="mr-6">
         <router-link to="/About">
           <a class="text-green-500 hover:text-blue-800 cursor-pointer">About</a>
         </router-link>
       </li>
-      <li>
+      <li class="mr-6">
         <router-link to="/Contact">
           <a class="text-green-500 hover:text-blue-800 cursor-pointer">Contact</a>
         </router-link>

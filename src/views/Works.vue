@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <Header class="justify-content: top width: 100%"
+  <div class="flex-col min-h-screen">
+    <Header class="top-0 w-full"
             :small_text="'lets go'" :big_text_above="'HIGHER'" :big_text_below="'WORKS'"/>
-    <div class="flex">
+    <div class="justify-content-center flex-grow m-16">
       <h3 class="m-auto text-3xl text-white">Create Or Choose An Album</h3>
       <div class="w-64">
         <input
@@ -18,9 +18,8 @@
       <div class="text-red-500">{{ error }}</div>
       <hr />
       <h5 class="text-white mt-4 text-2xl">List Of Albums</h5>
-      <div class="flex flex-wrap w-full m-auto justify-center">
-        <div
-          v-for="(album, idx) in albums"
+      <div class="flex flex-col w-full m-auto justify-center">
+        <div v-for="(album, idx) in albums"
           :key="idx"
           class="text-white cursor-pointer mt-16 ml-4 w-3/12
            h-24 shadow-sm flex items-center justify-center"
@@ -28,16 +27,14 @@
         >
           <div class="text-white text-2xl">{{ album.name }}</div>
         </div>
-        </div>
       </div>
-    <Footer/>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
 import { mapGetters } from 'vuex';
-import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'Works',
@@ -46,7 +43,6 @@ export default {
   },
   data: () => ({ albumName: '', error: '' }),
   components: {
-    Footer,
     Header,
   },
   methods: {

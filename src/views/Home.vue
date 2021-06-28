@@ -1,25 +1,24 @@
 <template>
-  <div class="home">
+  <div class="fixed top-0 left-0 w-full h-full">
     <div>
       <page-loader/>
     </div>
-    <div class="video-wrapper">
-      <video-background
-        :src= "require('@/assets/videos/bg_video.mp4')"
-        :poster="require('@/assets/images/black-noise_med.png')"
-        style="max-height: 100%; height: 100vh"
-      >
-        <MenuBar class="menu-container"/>
-        <div class="center">
-          <div class="logoBig">HIGHER NOTES LOGO!</div>
-          <h1>...</h1>
-          <div class="font-semibold text-black-500" :v-if="user">Welcome</div>
-          <h1>...</h1>
-          <Login class="loginPanel" :v-if="!user"/>
-        </div>
-        <Footer/>
-      </video-background>
+    <div>
+      <Videobackground/>
     </div>
+    <MenuBar class="fixed left-0 top-0 w-full"/>
+    <div class="center">
+      <a class="flex font-bold text-white text-2xl line-through" :v-if="user">
+        <h1>HIGHER</h1>
+        <h1>NOTES</h1>
+      </a>
+      <a class="font-semibold text-white text-2xl line-through mt-16"
+         :v-if="user">Welcome {{user.username}}</a>
+      <div class="mt-4">
+        <Login :v-if="user == null"/>
+      </div>
+    </div>
+    <Footer/>
   </div>
 </template>
 
@@ -29,10 +28,12 @@ import MenuBar from '@/components/MenuBar.vue';
 import Login from '@/components/Login.vue';
 import { mapGetters } from 'vuex';
 import PageLoader from '@/components/PageLoader.vue';
+import Videobackground from '@/components/Videobackground.vue';
 
 export default {
   name: 'Home',
   components: {
+    Videobackground,
     PageLoader,
     Footer,
     Login,
@@ -49,28 +50,11 @@ export default {
 </script>
 
 <style scoped>
-div.home {
-  width:      100%;
-  height:     100%;
-  z-index:    5;
-  top:        0;
-  left:       0;
-  position:   fixed;
-}
-MenuBar.menu-container {
-  width:      100%;
-  height:     100%;
-  z-index:    5;
-  top:        0;
-  left:       0;
-  position:   fixed;
-}
 div.center {
   color: white;
   position: fixed;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
 </style>

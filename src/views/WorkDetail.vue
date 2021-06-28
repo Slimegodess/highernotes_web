@@ -26,10 +26,10 @@
         </label>
       </form>
     </div>
-    <div class="flex mt-16 justify-center
+    <div class="flex mt-6 justify-center
       text-white font-semibold">
-      <div class="justify-center text-3xl m-4 line-through">
-        Gallery Album</div>
+      <div class="justify-center text-3xl m-4">
+        Gallery Album:</div>
       <div class="justify-center text-3xl m-4">
         {{ albumName }}</div>
     </div>

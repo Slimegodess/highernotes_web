@@ -29,7 +29,7 @@ export default {
     return {
       isSticky: false,
       stickyClass: 'is_sticky',
-      // scrollPosition: 0,
+      scrollPosition: 0,
     };
   },
   created() {
