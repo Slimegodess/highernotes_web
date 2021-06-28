@@ -5,14 +5,14 @@
     <div class="flex text-white text-base mt-8 m-12">
       <p class="mr-16 m-8">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        , sed do eiusmod tempor incididunt ut labore et dolore magna
+        , sed do eiusmod tempor incididunt u labore et dolore magna
         aliqua.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        , sed do eiusmod tempor incididunt ut labore et dolore magna
+        , sed do eiusmod tempor incididunt ut labore et dlore magna
         aliqua.</p>
       <p class="mr-16 m-8">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        , sed do eiusmod tempor incididunt ut labore et dolore magna
+        , sed do eiusmod tempor incididunt ut labore t dolore magna
         aliqua.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
         , sed do eiusmod tempor incididunt ut labore et dolore magna
